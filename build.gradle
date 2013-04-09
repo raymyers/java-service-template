@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin : 'war'
+apply plugin : 'jetty'
+
+version = '0.0.1'
+httpPort = 3000
+
+
+group = 'com.cadrlife'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile group: 'commons-lang', name: 'commons-lang', version: '2.5'
+    compile group: 'com.google.guava', name: 'guava', version: '14.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.1.4'
+    compile 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.1.4'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-guava:2.1.2'
+	compile 'com.google.inject:guice:3.0'
+	compile 'com.sun.jersey.contribs:jersey-guice:1.17'
+	compile 'com.sun.jersey:jersey-server:1.17'
+	compile 'com.sun.jersey:jersey-core:1.17'
+	compile 'com.sun.jersey:jersey-servlet:1.17'
+	compile 'javax.ws.rs:jsr311-api:1.1.1'
+
+	compile 'com.google.inject.extensions:guice-servlet:3.0'
+	compile group: 'javax.servlet', name: 'servlet-api', version: '2.5' 
+
+	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.10'
+    testCompile 'junit:junit:4.11'
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.5'
+}
