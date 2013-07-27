@@ -7,8 +7,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
+import org.glassfish.jersey.process.internal.RequestScoped;
+
 import com.google.common.collect.ImmutableMap;
-import com.google.inject.servlet.RequestScoped;
 
 @Path("status")
 @RequestScoped

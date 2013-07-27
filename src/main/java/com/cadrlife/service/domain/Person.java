@@ -1,6 +1,9 @@
 package com.cadrlife.service.domain;
 
+import java.util.Date;
+
 public class Person {
+	private Date birthday = new Date();
 	private String name;
 	private int age;
 
@@ -18,5 +21,13 @@ public class Person {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 }

@@ -2,13 +2,14 @@ package com.cadrlife.service.service;
 
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 import com.cadrlife.service.domain.Person;
-import com.google.inject.Singleton;
 
 @Path("person")
 @Singleton
@@ -22,7 +23,7 @@ public class PersonResource {
     }
 
     @GET
-	@Produces("application/json")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Person get(@QueryParam("id") String id) {
          return personService.findById(id);
 	}
